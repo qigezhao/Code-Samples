@@ -1,0 +1,7 @@
+qige@ubuntu: ~$ gcc -o libc.so libc-lua.c -fPIC
+qige@ubuntu: ~$ ./test-libc.lua
+version:	QZ170714
+region:	0	0
+channel: 	14	43
+frequency: 	533	666
+
