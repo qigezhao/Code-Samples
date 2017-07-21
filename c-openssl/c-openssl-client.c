@@ -26,7 +26,7 @@
 
 int main(void)
 {
-	int ret = 0, op_bytes = 0;
+	int ret = 0, bytes_tx = 0, bytes_rx = 0;
 
 	int socket_fd;
 	struct sockaddr_in sa_server;
@@ -93,20 +93,25 @@ int main(void)
 
 		printf("> SSL encrypted. Line is secure.\n");
 
-		op_bytes = SSL_write(ssl, data, strlen(data));
-		if (op_bytes < 1)
+		bytes_tx = SSL_write(ssl, data, strlen(data));
+		if (bytes_tx < 1)
 		{
 			printf("err> cannot send request.\n");
 			ret = -6;
 			break;
 		}
 
-		printf("> SSL_write (%d bytes sent).\n", op_bytes);
+		printf("> SSL_write (%d bytes sent).\n", bytes_tx);
 
 		memset(buffer, 0, sizeof(buffer));
-		op_bytes = SSL_read(ssl, buffer, sizeof(buffer));
+		bytes_rx = SSL_read(ssl, buffer, sizeof(buffer));
 
-		printf("> SSL_read (%d bytes received).\n", op_bytes);
+		printf("> SSL_read (%d bytes received).\n", bytes_rx);
+
+		/*
+		int ssl_err = SSL_get_error(ssl, bytes_rx);
+		int ssl_bytes_rx_left = SSL_pending(bytes_rx);
+		*/
 
 	} while(FALSE);
 
