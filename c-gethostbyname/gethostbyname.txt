@@ -1,0 +1,4 @@
+$ gcc gethostbyname.c
+$ ./a.out
+Domain Name: www.baidu.com
+IP address: 61.135.169.121
