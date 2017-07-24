@@ -1,0 +1,10 @@
+$ gcc *.c -lcrypto
+$ ./a.out
+decode: [SGVsbG8gV29ybGQhAA==
+] > [Hello World!]
+--------
+encode: [Hello World!] > [SGVsbG8gV29ybGQhAA==
+]
+--------
+
+$ 
