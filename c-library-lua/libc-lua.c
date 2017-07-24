@@ -2,6 +2,7 @@
  * libc-lua.c
  *
  *  Created on: Jul 14, 2017
+ *  Updated on: Jul 24, 2017
  *      Author: Qige <qigezhao@gmail.com>
  */
 
@@ -45,7 +46,7 @@ static int frequency(lua_State *L)
 	lua_pushnumber(L, freq);
 	return 1;
 }
-static const struct luaL_Reg arn3_lua[] = {
+static const struct luaL_Reg lib_arn4[] = {
 	{"version", version},
 	{"region", region},
 	{"channel", channel},
@@ -53,9 +54,11 @@ static const struct luaL_Reg arn3_lua[] = {
 	{NULL, NULL}
 };
 
-int luaopen_lua(lua_State *L)
+// FORMAT: luaopen_ABC
+// ABC: library name, must same as filename "ABC.so"
+// $ gcc -shared -fPIC -o ABC.so *.c
+int luaopen_libarn(lua_State *L)
 {
-	luaL_openlib(L, "arn3_lua", arn3_lua, 0);
+	luaL_openlib(L, "lib_arn4", lib_arn4, 0);
 	return 1;
 }
-
