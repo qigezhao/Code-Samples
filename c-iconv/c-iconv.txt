@@ -1,0 +1,5 @@
+$ gcc *.c
+$ ./a.out
+1> charset convert successfully.
+2> charset convert successfully.
+
