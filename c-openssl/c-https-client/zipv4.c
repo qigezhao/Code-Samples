@@ -12,7 +12,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#include "qz-ipv4.h"
+#include "zipv4.h"
 
 char *qz_gethostbyname(const char *hostname)
 {
@@ -46,4 +46,3 @@ char *qz_gethostbyname(const char *hostname)
 
 	return ip;
 }
-

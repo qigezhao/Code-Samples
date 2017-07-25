@@ -19,7 +19,7 @@
 #include <openssl/err.h>
 #include <openssl/ssl.h>
 
-#include "qz-ipv4.h"
+#include "zipv4.h"
 
 #define DST_URL "www.baidu.com"
 //#define DST_URL "192.168.1.2"
@@ -125,4 +125,3 @@ int main(void)
 
 	return ret;
 }
-
