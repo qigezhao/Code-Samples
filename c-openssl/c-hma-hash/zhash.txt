@@ -1,0 +1,2 @@
+$ gcc -o zhash.so *.c -shared -fPIC
+$ 
