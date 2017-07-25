@@ -1,7 +1,0 @@
-$ gcc c-openssl-client.c ipv4.c
-$ ./a.out
-> Connected.
-> SSL encrypted. Line is secure.
-> SSL_write (36 bytes sent).
-> SSL_read (1024 bytes received).
-
